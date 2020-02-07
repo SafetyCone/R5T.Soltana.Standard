@@ -4,4 +4,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;1591;1573</NoWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.Hladir.CSharp.Standard\source\R5T.Hladir.CSharp.Standard\R5T.Hladir.CSharp.Standard.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Koping.Standard\source\R5T.Koping.Standard\R5T.Koping.Standard.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Lombardy.Standard\source\R5T.Lombardy.Standard\R5T.Lombardy.Standard.csproj" />
+    <ProjectReference Include="..\..\..\R5T.Soltana.Default\source\R5T.Soltana.Default\R5T.Soltana.Default.csproj" />
+  </ItemGroup>
 </Project>
