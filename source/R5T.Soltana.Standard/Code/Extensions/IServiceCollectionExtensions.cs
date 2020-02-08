@@ -37,12 +37,34 @@ namespace R5T.Soltana.Standard
         /// Adds the <see cref="IVisualStudioSolutionFileOperator"/> service.
         /// Allows specifying the <see cref="IVisualStudioSolutionFileGenerator"/>, to allow using either VS2017 or VS2019.
         /// </summary>
+        public static IServiceCollection AddInMemoryVisualStudioSolutionFileOperator(this IServiceCollection services,
+            ServiceAction<IVisualStudioSolutionFileGenerator> addSolutionFileGenerator)
+        {
+            services.AddVisualStudioSolutionFileOperator(addSolutionFileGenerator);
+
+            return services;
+        }
+
+        /// <summary>
+        /// Adds the <see cref="IVisualStudioSolutionFileOperator"/> service.
+        /// Allows specifying the <see cref="IVisualStudioSolutionFileGenerator"/>, to allow using either VS2017 or VS2019.
+        /// </summary>
         public static ServiceAction<IVisualStudioSolutionFileOperator> AddVisualStudioSolutionFileOperatorAction(this IServiceCollection services,
             ServiceAction<IVisualStudioSolutionFileGenerator> addSolutionFileGenerator)
         {
             var serviceAction = new ServiceAction<IVisualStudioSolutionFileOperator>(() => services.AddVisualStudioSolutionFileOperator(
                 addSolutionFileGenerator));
             return serviceAction;
+        }
+
+        /// <summary>
+        /// Adds the <see cref="IVisualStudioSolutionFileOperator"/> service.
+        /// Allows specifying the <see cref="IVisualStudioSolutionFileGenerator"/>, to allow using either VS2017 or VS2019.
+        /// </summary>
+        public static ServiceAction<IVisualStudioSolutionFileOperator> AddInMemoryVisualStudioSolutionFileOperatorAction(this IServiceCollection services,
+            ServiceAction<IVisualStudioSolutionFileGenerator> addSolutionFileGenerator)
+        {
+            return services.AddVisualStudioSolutionFileOperatorAction(addSolutionFileGenerator);
         }
     }
 }
